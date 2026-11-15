@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PaintApp.iml" filepath="$PROJECT_DIR$/PaintApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test_swing.iml" filepath="$PROJECT_DIR$/test_swing.iml" />
     </modules>
   </component>
 </project>

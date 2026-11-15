@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="PaintApp">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/PaintApp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PaintApp/PaintApp.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
