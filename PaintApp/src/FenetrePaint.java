@@ -18,7 +18,6 @@ public class FenetrePaint extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Barre du haut (Fichiers & Langues)
         JToolBar topBar = new JToolBar();
         btnOuvrir = new JButton();
         btnSauvegarder = new JButton();
@@ -34,7 +33,6 @@ public class FenetrePaint extends JFrame {
         topBar.add(btnEN);
         add(topBar, BorderLayout.NORTH);
 
-        // Panneau latéral gauche avec GridLayout (Outils de dessin)
         JPanel panelOutils = new JPanel(new GridLayout(6, 1, 5, 5));
         btnCrayon = new JButton();
         btnLigne = new JButton();
@@ -51,11 +49,9 @@ public class FenetrePaint extends JFrame {
         panelOutils.add(btnEpaisseur);
         add(panelOutils, BorderLayout.WEST);
 
-        // Zone de dessin au centre
         zoneDessin = new ZoneDessin();
         add(zoneDessin, BorderLayout.CENTER);
 
-        // Événements des outils
         btnCrayon.addActionListener(e -> zoneDessin.setOutil("CRAYON"));
         btnLigne.addActionListener(e -> zoneDessin.setOutil("LIGNE"));
         btnRectangle.addActionListener(e -> zoneDessin.setOutil("RECTANGLE"));
