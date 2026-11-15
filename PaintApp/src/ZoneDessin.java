@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZoneDessin extends JPanel {
-    // Classe interne pour mémoriser chaque forme dessinée avec sa couleur et son épaisseur
     private static class FormeColoree {
         Shape forme;
         Color couleur;
@@ -28,12 +27,10 @@ public class ZoneDessin extends JPanel {
     private final List<FormeColoree> formes = new ArrayList<>();
     private BufferedImage imageFond = null;
 
-    // Paramètres actuels du pinceau
     private String outilActuel = "CRAYON";
     private Color couleurActuelle = Color.BLACK;
     private float epaisseurActuelle = 3.0f;
 
-    // Coordonnées pour tracer une forme en glissant la souris
     private int xDebut, yDebut, xFin, yFin;
     private Shape formeEnCours = null;
 
@@ -127,12 +124,10 @@ public class ZoneDessin extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // 1. Affiche l'image ouverte s'il y en a une
         if (imageFond != null) {
             g2.drawImage(imageFond, 0, 0, this);
         }
 
-        // 2. Dessine toutes les formes enregistrées
         for (FormeColoree fc : formes) {
             g2.setColor(fc.couleur);
             g2.setStroke(new BasicStroke(fc.epaisseur, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
@@ -140,7 +135,6 @@ public class ZoneDessin extends JPanel {
             else g2.draw(fc.forme);
         }
 
-        // 3. Dessine l'aperçu de la forme pendant qu'on glisse la souris
         if (formeEnCours != null) {
             g2.setColor(couleurActuelle);
             g2.setStroke(new BasicStroke(epaisseurActuelle));
